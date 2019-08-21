@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OAuth</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="858324272791-up3c3r280vpr6l33dsh8oou8l70h1uuv.apps.googleusercontent.com">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  </head>  
+  <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!--onclick="location.href = '/details.html';"-->
+    <!--data-onsuccess="onSignIn"-->
+    
+    <div class = "container">
+      <img src = "https://lh3.googleusercontent.com/-RWVB2w8ZvYA/AAAAAAAAAAI/AAAAAAAADVE/0AfLv0yVyGs/s96-c/photo.jpg" alt = "profile pic" id="profilePic">
+      <span id = "name">
+      Adarsh Naidu
+      </span>
+      <span>
+        <code  id = "mail">naidu.adarsh2511@gmail.com</code>
+      </span>
+      <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+
+    
+    
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <!--async defer-->
+  </body>
+</html>
