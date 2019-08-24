@@ -90,6 +90,8 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
     facebookButton.style.display = "none";
     facebookInfo.style.display = "inline-flex";
     console.log('Welcome!  Fetching your information.... ');
+    login();
+    getInfo();
     FB.api('/me', function(response) {
       console.log(response);
       console.log('Successful login for: ' + response.name);
@@ -97,6 +99,17 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
         response.name;
     });
   }
+
+//   function getInfo() {
+// 			FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,picture.width(150).height(150)'}, function(response) {
+// 				console.log(response.picture.data.url);
+// 			});
+// 		}
+
+//   function login() {
+// 			FB.login(function(response) {
+// 			}, {scope: 'email'});
+// 		}
   
   function logout(){
     FB.logout(function(response) {
@@ -107,3 +120,51 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
 });
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '764835337314957',
+		      xfbml      : true,
+		      version    : 'v4.0'
+		    });
+		    FB.getLoginStatus(function(response) {
+		    });
+		};
+		(function(d, s, id){
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) {return;}
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_US/sdk.js";
+		    fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+
+		function login() {
+			FB.login(function(response) {
+			}, {scope: 'email'});
+		}
+		
+	
+		function getInfo() {
+			FB.api('/me', 'GET', {fields: 'first_name,last_name,name,email,id,picture.width(150).height(150)'}, function(response) {
+				console.log(response.picture.data.url);
+        console.log(response);
+        document.getElementById('status').innerHTML = response.name;
+        document.querySelector('.facebook img').src = response.picture.data.url;
+        document.getElementById('facebookEmail').innerHTML = response.email;
+			});
+		}
