@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-client_id" content="858324272791-up3c3r280vpr6l33dsh8oou8l70h1uuv.apps.googleusercontent.com">
     
-    <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     
-    <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   </head>  
@@ -19,9 +17,14 @@
     
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id = "facebook" style= "margin: 10px;"></fb:login-button>
     
+    
     <div class = "facebook">
+      <img src = "hi" alt = "profile pic" style = "border-radius: 50%;">
       <div id="status"></div>
-      <button onclick = "logout()">sign out</button>
+      <span>
+        <code id = "facebookEmail"></code>
+      </span>
+      <a href = "#" onclick = "logout()">sign out</a>
     </div>
     
     <div class = "container">
@@ -36,6 +39,6 @@
     
     
     <script src="https://apis.google.com/js/platform.js"></script>
-    <!--async defer-->
+
   </body>
 </html>
