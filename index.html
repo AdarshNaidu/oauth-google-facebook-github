@@ -16,20 +16,23 @@
   </head>  
   <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <!--onclick="location.href = '/details.html';"-->
-    <!--data-onsuccess="onSignIn"-->
+    
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id = "facebook" style= "margin: 10px;"></fb:login-button>
+    
+    <div class = "facebook">
+      <div id="status"></div>
+      <button onclick = "logout()">sign out</button>
+    </div>
     
     <div class = "container">
-      <img src = "https://lh3.googleusercontent.com/-RWVB2w8ZvYA/AAAAAAAAAAI/AAAAAAAADVE/0AfLv0yVyGs/s96-c/photo.jpg" alt = "profile pic" id="profilePic">
+      <img src = "hi" alt = "profile pic" id="profilePic">
       <span id = "name">
-      Adarsh Naidu
       </span>
       <span>
-        <code  id = "mail">naidu.adarsh2511@gmail.com</code>
+        <code  id = "mail"></code>
       </span>
       <a href="#" onclick="signOut();">Sign out</a>
     </div>
-
     
     
     <script src="https://apis.google.com/js/platform.js"></script>

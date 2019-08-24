@@ -42,3 +42,17 @@ body {
 a{
   text-decoration: none;
 }
+
+
+.facebook {
+  margin : 30px;
+  padding : 15px;
+  display : inline-flex;
+  flex-flow : column;
+  border : 1px solid black;
+  border-radius : 10px;
+  justify-content : center;
+  
+  align-items : center;
+  display: none;
+}
